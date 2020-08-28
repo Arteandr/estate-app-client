@@ -5,19 +5,20 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { View, Text } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
+import LoginEmailScreen from "./screens/Login/LoginEmailScreen";
+
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
 // [DEBUG] TEST COMPONENT  -----------NEED TO DELETE---------
+{
+  /* <Text onPress={() => navigation.navigate("LoginPassword")}>
+  LoginEmail
+      </Text> */
+}
 const LoginEmail = () => {
   const navigation = useNavigation();
-  return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text onPress={() => navigation.navigate("LoginPassword")}>
-        LoginEmail
-      </Text>
-    </View>
-  );
+  return <LoginEmailScreen />;
 };
 // [DEBUG] TEST COMPONENT  -----------NEED TO DELETE---------
 const LoginPassword = () => {
