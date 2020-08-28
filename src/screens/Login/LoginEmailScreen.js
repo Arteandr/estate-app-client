@@ -38,7 +38,8 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 24,
     borderTopRightRadius: 24,
     paddingTop: height * 0.05,
-    paddingLeft: height * 0.03,
+    paddingLeft: width * 0.064,
+    paddingRight: width * 0.064,
   },
   title: {
     color: colors.dark,
@@ -49,5 +50,6 @@ const styles = StyleSheet.create({
   subtitle: {
     color: colors.grey,
     fontSize: 14,
+    paddingBottom: height * 0.023,
   },
 });
