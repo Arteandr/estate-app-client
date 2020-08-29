@@ -17,8 +17,11 @@ export default function EmailInputComponent() {
       <Text style={styles.title}>Email or mobile number</Text>
       <View style={styles.input}>
         <TextInput
+          keyboardType="email-address"
+          autoCorrect="false"
+          autoCompleteType="off"
+          textContentType="emailAddress"
           style={styles.input__text}
-          placeholder="example@example.com"
         />
         <CheckCircleIcon />
       </View>
@@ -45,9 +48,11 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
+    paddingRight: width * 0.05,
   },
   input__text: {
     color: colors.grey,
     fontWeight: "500",
+    width: "100%",
   },
 });

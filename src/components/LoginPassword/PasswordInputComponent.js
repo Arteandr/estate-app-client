@@ -1,5 +1,5 @@
 //BASE
-import React from "react";
+import React, { useState } from "react";
 import {
   StyleSheet,
   Text,
@@ -14,22 +14,27 @@ import colors from "../../utils/colors";
 
 //ICONS
 import EyeIcon from "../../../assets/Icons/EyeIcon";
+import EyeCloseIcon from "../../../assets/Icons/EyeCloseIcon";
 
 //SCREEN HEIGHT & WIDTH
 const { height, width } = Dimensions.get("screen");
 
 export default function PasswordInputComponent() {
+  const [password, setPassword] = useState(false);
+  function showHandler() {
+    setPassword(!password);
+  }
   return (
     <View style={styles.container}>
       <Text style={styles.title}>password</Text>
       <View style={styles.input}>
         <TextInput
           style={styles.input__text}
-          secureTextEntry={true}
-          placeholder="● ● ● ● ● ●"
+          autoCompleteType="off"
+          secureTextEntry={!password}
         />
-        <TouchableOpacity>
-          <EyeIcon />
+        <TouchableOpacity onPress={showHandler}>
+          {password ? <EyeCloseIcon /> : <EyeIcon />}
         </TouchableOpacity>
       </View>
     </View>
@@ -55,9 +60,11 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
+    paddingRight: width * 0.05,
   },
   input__text: {
     color: colors.grey,
     fontWeight: "500",
+    width: "100%",
   },
 });
