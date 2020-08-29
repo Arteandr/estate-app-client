@@ -12,14 +12,6 @@ import LoginPasswordScreen from "./screens/Login/LoginPasswordScreen";
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
-const LoginEmail = () => {
-  return <LoginEmailScreen />;
-};
-
-const LoginPassword = () => {
-  return <LoginPasswordScreen />;
-};
-
 // [TODO] Добавить для каждого экрана атрибут component={componentName} и импортировать их
 function LoginNavigator() {
   return (
@@ -27,8 +19,12 @@ function LoginNavigator() {
       initialRouteName="LoginEmail"
       screenOptions={{ headerShown: false }}
     >
-      <Stack.Screen name="LoginEmail" component={LoginEmail} />
-      <Stack.Screen name="LoginPassword" component={LoginPassword} />
+      <Stack.Screen name="LoginEmail" component={LoginEmailScreen} />
+      <Stack.Screen
+        options={{ gestureEnabled: false }}
+        name="LoginPassword"
+        component={LoginPasswordScreen}
+      />
     </Stack.Navigator>
   );
 }
