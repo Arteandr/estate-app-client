@@ -1,33 +1,23 @@
+//BASE
 import React from "react";
 
+//NAVIGATION
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { View, Text } from "react-native";
-import { useNavigation } from "@react-navigation/native";
 
+//SCREENS
 import LoginEmailScreen from "./screens/Login/LoginEmailScreen";
+import LoginPasswordScreen from "./screens/Login/LoginPasswordScreen";
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
-// [DEBUG] TEST COMPONENT  -----------NEED TO DELETE---------
-{
-  /* <Text onPress={() => navigation.navigate("LoginPassword")}>
-  LoginEmail
-      </Text> */
-}
 const LoginEmail = () => {
-  const navigation = useNavigation();
   return <LoginEmailScreen />;
 };
-// [DEBUG] TEST COMPONENT  -----------NEED TO DELETE---------
+
 const LoginPassword = () => {
-  const navigation = useNavigation();
-  return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text onPress={() => navigation.goBack()}>LoginPassword</Text>
-    </View>
-  );
+  return <LoginPasswordScreen />;
 };
 
 // [TODO] Добавить для каждого экрана атрибут component={componentName} и импортировать их

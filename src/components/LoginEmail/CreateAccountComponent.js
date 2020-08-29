@@ -1,3 +1,4 @@
+//BASE
 import React from "react";
 import {
   StyleSheet,
@@ -6,15 +7,18 @@ import {
   TouchableOpacity,
   Dimensions,
 } from "react-native";
+
+//COLORS
 import colors from "../../utils/colors";
 
+//SCREEN HEIGHT & WIDTH
 const { height, width } = Dimensions.get("screen");
 
-export default function NextStepComponent() {
+export default function CreateAccountComponent() {
   return (
     <TouchableOpacity>
       <View style={styles.button}>
-        <Text style={styles.button__text}>Next step</Text>
+        <Text style={styles.button__text}>Create an account</Text>
       </View>
     </TouchableOpacity>
   );
@@ -23,14 +27,16 @@ export default function NextStepComponent() {
 const styles = StyleSheet.create({
   button: {
     width: width * 0.872,
-    backgroundColor: colors.primary,
+    backgroundColor: colors.white,
     height: height * 0.059,
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 60,
+    borderWidth: 2,
+    borderColor: "rgba(143, 146, 161, 0.2)",
   },
   button__text: {
-    color: colors.white,
+    color: colors.dark,
     fontSize: 14,
     fontWeight: "bold",
   },

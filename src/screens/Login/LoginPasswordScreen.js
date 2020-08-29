@@ -13,14 +13,14 @@ import {
 import colors from "../../utils/colors";
 
 //COMPONENTS
-import EmailInputComponent from "../../components/LoginEmail/EmailInputComponent";
-import NextStepComponent from "../../components/LoginEmail/NextStepComponent";
-import CreateAccountComponent from "../../components/LoginEmail/CreateAccountComponent";
+import PasswordInputComponent from "../../components/LoginPassword/PasswordInputComponent";
+import LoginButtonComponent from "../../components/LoginPassword/LoginButtonComponent";
+import ForgotPasswordComponent from "../../components/LoginPassword/ForgotPasswordComponent";
 
 //SCREEN HEIGHT & WIDTH
 const { height, width } = Dimensions.get("screen");
 
-export default function LoginEmailScreen() {
+export default function LoginPasswordScreen() {
   return (
     <View style={styles.container}>
       <Image
@@ -29,12 +29,12 @@ export default function LoginEmailScreen() {
       />
       <View style={styles.main}>
         <Text style={styles.title}>Welcome Back!</Text>
-        <Text style={styles.subtitle}>Enter your email or number</Text>
-        <EmailInputComponent />
+        <Text style={styles.subtitle}>Enter your password</Text>
+        <PasswordInputComponent />
         <View style={styles.buttons}>
-          <NextStepComponent />
+          <LoginButtonComponent />
           <Text style={styles.buttons__text}>or</Text>
-          <CreateAccountComponent />
+          <ForgotPasswordComponent />
         </View>
         <View style={styles.terms}>
           <Text style={styles.terms__text}>
